@@ -1,0 +1,40 @@
+{
+    "data":{
+        "siteName": "Honeywell HCE",
+        "siteId": "HCE29968300",
+        "systemType": "EBI",
+        "analysis": {
+            "predictedTime": "24 Hr",
+            "timetaken": "2 Hr",
+            "actualTime": null,
+            "stages": [
+                {
+                    "name": "Create Team and Configure site",
+                    "predicted": "20 Min",
+                    "actual": "15 Min"
+                },
+                {
+                    "name": "Gather Information",
+                    "predicted": "2 Hr",
+                    "actual": "1.45 Hr"
+                },
+                {
+                    "name": "Validate Points (Opt)",
+                    "predicted": "4 Hr",
+                    "actual": null
+                },
+                {
+                    "name": "Pubhish History Data",
+                    "predicted": "20 Min",
+                    "actual": null
+                },
+                {
+                    "name": "Siter Handover",
+                    "predicted": "5 Min",
+                    "actual": null
+                }
+            ]
+    
+        }
+    }
+}
