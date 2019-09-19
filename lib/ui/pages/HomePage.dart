@@ -28,6 +28,7 @@ class _HomePageState extends State<HomePage> {
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           hintText: 'Enter Site ID',
+          suffixText: 'Site ID',
           border: OutlineInputBorder()),
     );
 
