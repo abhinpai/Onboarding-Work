@@ -9,15 +9,20 @@ class SiteDataWidget extends StatelessWidget {
     color: Colors.black45,
   );
 
-  TextStyle siteIdStyle = TextStyle(color: Colors.black38, fontWeight: FontWeight.bold);
+  TextStyle siteIdStyle =
+      TextStyle(color: Colors.black38, fontWeight: FontWeight.bold);
+
+  String siteName;
+  String siteId;
+  String systemtype;
+
+  SiteDataWidget(this.siteName, this.siteId, this.systemtype);
 
   BoxDecoration myBoxDecoration() {
     return BoxDecoration(
       color: Colors.black12,
       border: Border.all(width: 1.0, color: Colors.black12),
-      borderRadius: BorderRadius.all(
-          Radius.circular(30.0) 
-          ),
+      borderRadius: BorderRadius.all(Radius.circular(30.0)),
     );
   }
 
@@ -34,18 +39,21 @@ class SiteDataWidget extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 8.0, 0),
                 child: Text(
-                  'Honeywell GRE',
+                  this.siteName,
                   style: siteNameStyle,
                 ),
               ),
               Container(
                 padding: const EdgeInsets.fromLTRB(20.0, 2.0, 20.0, 2.0),
                 decoration: myBoxDecoration(),
-                child: Text("EBI", style: systemTypeStyle),
+                child: Text(this.systemtype, style: systemTypeStyle),
               ),
             ],
           ),
-          Text('SITE00299683', style: siteIdStyle,),
+          Text(
+            this.siteId,
+            style: siteIdStyle,
+          ),
         ],
       ),
     );

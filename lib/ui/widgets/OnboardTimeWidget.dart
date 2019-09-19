@@ -6,6 +6,9 @@ class OnboardTimeWidget extends StatelessWidget {
   final Color predictedColor = Colors.red;
   final Color actualColor = Colors.green;
 
+  dynamic analysis;
+  OnboardTimeWidget(this.analysis);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,7 +27,7 @@ class OnboardTimeWidget extends StatelessWidget {
                     'Predicted Onboarding TIme',
                     style: style,
                   )),
-              Text('24 Hr',
+              Text(this.analysis.predictedTime,
                   style: style.copyWith(color: predictedColor, fontSize: 16.0)),
             ],
           ),
@@ -35,14 +38,18 @@ class OnboardTimeWidget extends StatelessWidget {
               Padding(
                   padding: EdgeInsets.fromLTRB(0, 0, 8.0, 0.0),
                   child: Text(
-                    'Time taken so far',
+                    (this.analysis.actualTime == "")
+                        ? 'Time taken so far'
+                        : 'Actual Onboarding Time',
                     style: style,
                   )),
-              Text('10 Hr',
+              Text(
+                  (this.analysis.actualTime == "")
+                      ? this.analysis.timetaken
+                      : this.analysis.actualTime,
                   style: style.copyWith(color: actualColor, fontSize: 16.0)),
             ],
           ),
-          // Padding(padding: EdgeInsets.only(bottom: 10.0),)
         ],
       ),
     );

@@ -25,17 +25,16 @@ class _HomePageState extends State<HomePage> {
       controller: _siteIdctrl,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: 'Hello Mahaveer',
+          hintText: 'Enter Site ID',
           border: OutlineInputBorder()),
     );
 
     final statusBtn = Material(
-      elevation: 1.0,
+      elevation: 10.0,
       borderRadius: BorderRadius.circular(25.0),
-      color: Colors.red,
+      color: Color(0xffdd1f2d),
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
-        height: 10.0,
         padding: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
         onPressed: () {
           print('Site Id:' + _siteIdctrl.text);

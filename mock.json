@@ -1,12 +1,11 @@
 {
-    "data":{
-        "siteName": "Honeywell HCE",
+        "siteName": "Honeywell HCE2",
         "siteId": "HCE29968300",
         "systemType": "EBI",
         "analysis": {
             "predictedTime": "24 Hr",
             "timetaken": "2 Hr",
-            "actualTime": null,
+            "actualTime": "10 Hr",
             "stages": [
                 {
                     "name": "Create Team and Configure site",
@@ -36,4 +35,3 @@
             ]
         }
     }
-}

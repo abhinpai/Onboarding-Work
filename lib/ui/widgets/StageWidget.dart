@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:onboarding/ui/pages/Dashboard.dart';
 
 class StageWidget extends StatelessWidget {
-
-TextStyle stageStyle = TextStyle(
-  fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.black45
-);
-TextStyle ownerStyle = TextStyle(
-  fontWeight: FontWeight.bold, fontSize: 14.0, color: Colors.black45
-);
- final Color predictedColor = Colors.red;
+  TextStyle stageStyle = TextStyle(
+      fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.black45, );
+  TextStyle ownerStyle = TextStyle(
+      fontWeight: FontWeight.bold, fontSize: 14.0, color: Colors.black45);
+  final Color predictedColor = Colors.red;
   final Color actualColor = Colors.green;
+
+
+  Stage stageData;
+  StageWidget(this.stageData);
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +22,34 @@ TextStyle ownerStyle = TextStyle(
         children: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[Text('Stage Name 1', style: stageStyle,), Text('15 Min', style: stageStyle.copyWith(fontSize: 16.0, color: predictedColor))],
+            children: <Widget>[
+              SizedBox(width: 230, child: Text(
+                
+                this.stageData.name,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                softWrap: false,
+                style: stageStyle,
+              ),),
+              Text(this.stageData.predicted,
+                  style: stageStyle.copyWith(
+                      fontSize: 16.0, color: predictedColor))
+            ],
           ),
-          Padding(padding: EdgeInsets.only(bottom: 4.0),),
+          Padding(
+            padding: EdgeInsets.only(bottom: 4.0),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[Text('Customer Success Manager', style: ownerStyle,), Text('15 Min', style: stageStyle.copyWith(fontSize: 16.0, color: actualColor))],
+            children: <Widget>[
+              Text(
+                'Customer Success Manager',
+                style: ownerStyle,
+              ),
+              Text(this.stageData.actual?? 'NA',
+                  style:
+                      stageStyle.copyWith(fontSize: 16.0, color: actualColor))
+            ],
           ),
         ],
       ),
