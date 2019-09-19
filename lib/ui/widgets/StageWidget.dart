@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:onboarding/ui/pages/Dashboard.dart';
 
 class StageWidget extends StatelessWidget {
+
   TextStyle stageStyle = TextStyle(
       fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.black45, );
   TextStyle ownerStyle = TextStyle(
@@ -9,8 +9,7 @@ class StageWidget extends StatelessWidget {
   final Color predictedColor = Colors.red;
   final Color actualColor = Colors.green;
 
-
-  Stage stageData;
+  dynamic stageData;
   StageWidget(this.stageData);
 
   @override

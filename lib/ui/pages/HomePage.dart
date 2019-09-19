@@ -19,9 +19,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // Text Field to enter the site id
     final siteIdTextField = TextField(
-      // style: style,
       controller: _siteIdctrl,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -37,7 +35,6 @@ class _HomePageState extends State<HomePage> {
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
         onPressed: () {
-          print('Site Id:' + _siteIdctrl.text);
           Navigator.push(
               context,
               MaterialPageRoute(
@@ -55,7 +52,6 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Center(
           child: Container(
-              // color: Colors.red,
               child: Padding(
             padding: EdgeInsets.fromLTRB(26.0, 100.0, 26.0, 50.0),
             child: Column(
