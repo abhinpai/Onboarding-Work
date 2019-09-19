@@ -2,22 +2,23 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:onboarding/model/data_model.dart';
+import 'package:onboarding/services/LocalPreference.dart';
 import 'package:onboarding/ui/widgets/ChartWidget.dart';
 import 'package:onboarding/ui/widgets/OnboardTimeWidget.dart';
 import 'package:onboarding/ui/widgets/SiteDataWidget.dart';
 import 'package:onboarding/ui/widgets/StageWidget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Dashboard extends StatefulWidget {
-  final String siteId;
-  Dashboard(this.siteId);
   @override
-  _DashboardState createState() => _DashboardState(this.siteId);
+  _DashboardState createState() => _DashboardState();
 }
 
 class _DashboardState extends State<Dashboard> {
   String siteId;
   VoidCallback onBackPress;
-  _DashboardState(this.siteId);
+  _DashboardState();
+  LocalPreference pref = LocalPreference();
 
   @override
   initState() {
@@ -25,10 +26,21 @@ class _DashboardState extends State<Dashboard> {
     onBackPress = () {
       Navigator.of(context).pop();
     };
+    getSiteId();
+  }
+
+  getSiteId() async {
+    final prefs = await
+      SharedPreferences.getInstance() ;
+      String id =prefs.getString('siteId');
+    setState(() {
+      siteId = id;
+    });
+  print(siteId);
   }
 
   Future<DataModel> _getData() async {
-    final url = 'https://tracker1.free.beeceptor.com';
+    final url = 'https://tracker2.free.beeceptor.com';
     final response = await http.get(url);
     if (response.statusCode == 200) {
       var jsonData = json.decode(response.body);

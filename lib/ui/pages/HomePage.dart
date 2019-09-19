@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:onboarding/services/LocalPreference.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Dashboard.dart';
 
@@ -13,6 +15,8 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
+
+LocalPreference pref = LocalPreference();
   final String logo = 'assets/images/logo.png';
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   TextEditingController _siteIdctrl = TextEditingController();
@@ -35,10 +39,12 @@ class _HomePageState extends State<HomePage> {
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
         onPressed: () {
+          pref.setSiteId(_siteIdctrl.text);
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => Dashboard(_siteIdctrl.text)));
+                  builder: (context) => Dashboard()));
+                  _siteIdctrl.clear();
         },
         child: Text(
           'Get Site Status',
