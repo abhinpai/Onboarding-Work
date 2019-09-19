@@ -30,13 +30,12 @@ class _DashboardState extends State<Dashboard> {
   }
 
   getSiteId() async {
-    final prefs = await
-      SharedPreferences.getInstance() ;
-      String id =prefs.getString('siteId');
+    final prefs = await SharedPreferences.getInstance();
+    String id = prefs.getString('siteId');
     setState(() {
       siteId = id;
     });
-  print(siteId);
+    print(siteId);
   }
 
   Future<DataModel> _getData() async {

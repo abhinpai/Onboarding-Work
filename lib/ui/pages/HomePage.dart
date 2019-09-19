@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:onboarding/services/LocalPreference.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -15,8 +16,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-
-LocalPreference pref = LocalPreference();
+  LocalPreference pref = LocalPreference();
   final String logo = 'assets/images/logo.png';
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   TextEditingController _siteIdctrl = TextEditingController();
@@ -41,10 +41,8 @@ LocalPreference pref = LocalPreference();
         onPressed: () {
           pref.setSiteId(_siteIdctrl.text);
           Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => Dashboard()));
-                  _siteIdctrl.clear();
+              context, MaterialPageRoute(builder: (context) => Dashboard()));
+          _siteIdctrl.clear();
         },
         child: Text(
           'Get Site Status',
@@ -59,7 +57,7 @@ LocalPreference pref = LocalPreference();
         child: Center(
           child: Container(
               child: Padding(
-            padding: EdgeInsets.fromLTRB(26.0, 100.0, 26.0, 50.0),
+            padding: EdgeInsets.fromLTRB(0.0, 100.0, 0.0, 50.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -71,14 +69,17 @@ LocalPreference pref = LocalPreference();
                     fit: BoxFit.contain,
                   ),
                 ),
-                SizedBox(
-                  height: 45.0,
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30.0),
                   child: siteIdTextField,
                 ),
                 SizedBox(
                   height: 25.0,
                 ),
-                statusBtn
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 50.0),
+                  child: statusBtn,
+                )
               ],
             ),
           )),
