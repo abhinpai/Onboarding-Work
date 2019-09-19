@@ -39,7 +39,7 @@ class _DashboardState extends State<Dashboard> {
   }
 
   Future<DataModel> _getData() async {
-    final url = 'https://tracker2.free.beeceptor.com';
+    final url = 'https://tracker3.free.beeceptor.com';
     final response = await http.get(url);
     if (response.statusCode == 200) {
       var jsonData = json.decode(response.body);
