@@ -8,6 +8,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   final String logo = 'assets/images/logo.png';
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   TextEditingController _siteIdctrl = TextEditingController();
@@ -20,21 +25,24 @@ class _HomePageState extends State<HomePage> {
       controller: _siteIdctrl,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: 'Enter Site Id',
+          hintText: 'Hello Mahaveer',
           border: OutlineInputBorder()),
     );
 
     final statusBtn = Material(
       elevation: 1.0,
       borderRadius: BorderRadius.circular(25.0),
-      color: Colors.black26,
+      color: Colors.red,
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         height: 10.0,
         padding: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
         onPressed: () {
           print('Site Id:' + _siteIdctrl.text);
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard(_siteIdctrl.text)));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Dashboard(_siteIdctrl.text)));
         },
         child: Text(
           'Get Site Status',
