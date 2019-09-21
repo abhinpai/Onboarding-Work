@@ -39,7 +39,7 @@ class _DashboardState extends State<Dashboard> {
   }
 
   Future<DataModel> _getData() async {
-    final url = 'https://tracker3.free.beeceptor.com';
+    final url = 'https://trackerinsights.azurewebsites.net/api/getSiteInfo?siteid=madhan';
     final response = await http.get(url);
     if (response.statusCode == 200) {
       var jsonData = json.decode(response.body);
@@ -92,10 +92,9 @@ class _DashboardState extends State<Dashboard> {
   Widget createListView(BuildContext context, AsyncSnapshot snapshot) {
     TextStyle titleStyle = TextStyle(
         fontSize: 18.0, color: Colors.black, fontWeight: FontWeight.bold);
-
     dynamic values = snapshot.data.analysis.stages;
     final title = 'Stage Wise Onbaording Status';
-
+    
     return Container(
         padding: EdgeInsets.fromLTRB(8.0, 0, 8.0, 8.0),
         child: Column(

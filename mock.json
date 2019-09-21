@@ -1,37 +1,42 @@
 {
-        "siteName": "Honeywell HCE2",
-        "siteId": "HCE29968300",
-        "systemType": "EBI",
-        "analysis": {
-            "predictedTime": "24 Hr",
-            "timetaken": "2 Hr",
-            "actualTime": "10 Hr",
-            "stages": [
-                {
-                    "name": "Create Team and Configure site",
-                    "predicted": "20 Min",
-                    "actual": "15 Min"
-                },
-                {
-                    "name": "Gather Information",
-                    "predicted": "2 Hr",
-                    "actual": "1.45 Hr"
-                },
-                {
-                    "name": "Validate Points (Opt)",
-                    "predicted": "4 Hr",
-                    "actual": null
-                },
-                {
-                    "name": "Pubhish History Data",
-                    "predicted": "20 Min",
-                    "actual": null
-                },
-                {
-                    "name": "Siter Handover",
-                    "predicted": "5 Min",
-                    "actual": null
-                }
-            ]
-        }
-    }
+  "siteName": "siteName",
+  "siteId": "siteId",
+  "systemType": "systemType",
+  "analysis": {
+    "predictedTime": "",
+    "timetaken": "",
+    "actualTime": "",
+    "stages": [
+      {
+        "actual": "",
+        "name": "Define Project Team",
+        "timeType": "Hr",
+        "predicted": "1"
+      },
+      {
+        "actual": "",
+        "name": "Gather Information",
+        "timeType": "Day",
+        "predicted": "1.1"
+      },
+      {
+        "actual": "",
+        "name": "Configure Site Model",
+        "timeType": "Day",
+        "predicted": "5.8"
+      },
+      {
+        "actual": "",
+        "name": "Validate Dashboard",
+        "timeType": "Day",
+        "predicted": "1.1"
+      },
+      {
+        "actual": "",
+        "name": "Site Handover",
+        "timeType": "Hr",
+        "predicted": "1"
+      }
+    ]
+  }
+}

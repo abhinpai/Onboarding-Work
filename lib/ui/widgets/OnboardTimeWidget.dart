@@ -27,7 +27,12 @@ class OnboardTimeWidget extends StatelessWidget {
                     'Predicted Onboarding TIme',
                     style: style,
                   )),
-              Text(this.analysis.predictedTime,
+              Text(
+                  this.analysis.predictedTime != ""
+                      ? this.analysis.predictedTime +
+                          " " +
+                          this.analysis.timeType
+                      : 'NA',
                   style: style.copyWith(color: predictedColor, fontSize: 16.0)),
             ],
           ),

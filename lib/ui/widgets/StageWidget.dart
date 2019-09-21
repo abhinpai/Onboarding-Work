@@ -30,7 +30,7 @@ class StageWidget extends StatelessWidget {
                 softWrap: false,
                 style: stageStyle,
               ),),
-              Text(this.stageData.predicted,
+              Text(this.stageData.predicted + " " + this.stageData.timeType,
                   style: stageStyle.copyWith(
                       fontSize: 16.0, color: predictedColor))
             ],
@@ -45,7 +45,7 @@ class StageWidget extends StatelessWidget {
                 'Customer Success Manager',
                 style: ownerStyle,
               ),
-              Text(this.stageData.actual?? 'NA',
+              Text(this.stageData.actual != null ? this.stageData.actual + " " + this.stageData.timeType : 'NA',
                   style:
                       stageStyle.copyWith(fontSize: 16.0, color: actualColor))
             ],
