@@ -10,6 +10,9 @@ class ChartWidget extends StatefulWidget {
 }
 
 class _ChartWidgetState extends State<ChartWidget> {
+  TextStyle chartLengendStyle =
+      TextStyle(fontWeight: FontWeight.bold, fontSize: 14.0);
+
   List<charts.Series<OnboardTrack, int>> _seriesLineData;
 
   _generateData() {
@@ -59,18 +62,63 @@ class _ChartWidgetState extends State<ChartWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height / 2,
-      width: MediaQuery.of(context).size.width,
       child: Center(
-        child: Container(
-          child: charts.LineChart(
-            _seriesLineData,
-            defaultRenderer: new charts.LineRendererConfig(),
-            animate: true,
-            animationDuration: Duration(seconds: 2),
+          child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            height: MediaQuery.of(context).size.height / 2,
+            width: MediaQuery.of(context).size.width,
+            child: charts.LineChart(
+              _seriesLineData,
+              defaultRenderer: new charts.LineRendererConfig(),
+              animate: true,
+              animationDuration: Duration(seconds: 2),
+            ),
           ),
-        ),
-      ),
+          SizedBox(
+            height: 20.0,
+          ),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      height: 10.0,
+                      width: 30.0,
+                      decoration: new BoxDecoration(
+                        color: Colors.red,
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                    Text(
+                      'Predicted',
+                      style: chartLengendStyle,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 20.0),
+                    ),
+                    Container(
+                      height: 10.0,
+                      width: 30.0,
+                      decoration: new BoxDecoration(
+                        color: Colors.green,
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                    Text(
+                      'Actual',
+                      style: chartLengendStyle,
+                    )
+                  ],
+                ),
+              ),
+            ],
+          )
+        ],
+      )),
     );
   }
 }

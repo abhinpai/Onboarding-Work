@@ -94,7 +94,7 @@ class _DashboardState extends State<Dashboard> {
     TextStyle titleStyle = TextStyle(
         fontSize: 18.0, color: Colors.black, fontWeight: FontWeight.bold);
     dynamic values = snapshot.data.analysis.stages;
-    final title = 'Stage Wise Onbaording Status';
+    final title = 'Stage Wise Onboarding Status';
     
     return Container(
         padding: EdgeInsets.fromLTRB(8.0, 0, 8.0, 8.0),

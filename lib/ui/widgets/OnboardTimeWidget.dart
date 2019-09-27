@@ -24,7 +24,7 @@ class OnboardTimeWidget extends StatelessWidget {
               Padding(
                   padding: EdgeInsets.fromLTRB(0, 0, 8.0, 6.0),
                   child: Text(
-                    'Predicted Onboarding TIme',
+                    'Predicted Onboarding Time',
                     style: style,
                   )),
               Text(

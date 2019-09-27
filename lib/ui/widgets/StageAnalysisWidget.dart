@@ -4,7 +4,7 @@ import 'package:onboarding/ui/pages/Dashboard.dart';
 import 'StageWidget.dart';
 
 class StageAnalysisWidget extends StatelessWidget {
-  final title = 'Stage Wise Onbaording Status';
+  final title = 'Stage Wise Onboarding Status';
   TextStyle titleStyle = TextStyle(
       fontSize: 18.0, color: Colors.black, fontWeight: FontWeight.bold);
 
