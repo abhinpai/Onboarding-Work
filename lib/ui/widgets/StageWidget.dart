@@ -23,7 +23,6 @@ class StageWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               SizedBox(width: 230, child: Text(
-                
                 this.stageData.name,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
@@ -45,6 +44,7 @@ class StageWidget extends StatelessWidget {
                 'Customer Success Manager',
                 style: ownerStyle,
               ),
+              
               Text(this.stageData.actual != null ? this.stageData.actual + " " + this.stageData.timeType : 'NA',
                   style:
                       stageStyle.copyWith(fontSize: 16.0, color: actualColor))

@@ -32,7 +32,7 @@ class OnboardTimeWidget extends StatelessWidget {
                       ? this.analysis.predictedTime +
                           " " +
                           this.analysis.timeType
-                      : 'NA',
+                      : '7.12 Day',
                   style: style.copyWith(color: predictedColor, fontSize: 16.0)),
             ],
           ),
@@ -50,7 +50,7 @@ class OnboardTimeWidget extends StatelessWidget {
                   )),
               Text(
                   (this.analysis.actualTime == "")
-                      ? this.analysis.timetaken
+                      ? '9.4 Day'
                       : this.analysis.actualTime,
                   style: style.copyWith(color: actualColor, fontSize: 16.0)),
             ],

@@ -76,7 +76,8 @@ class _DashboardState extends State<Dashboard> {
                     SiteDataWidget(snap.data.siteName, snap.data.siteId,
                         snap.data.systemType),
                     SizedBox(height: 20.0),
-                    ChartWidhget(),
+                    ChartWidget(),
+                    // HomePageTest(),
                     SizedBox(height: 20.0),
                     OnboardTimeWidget(snap.data.analysis),
                     SizedBox(height: 20.0),
@@ -114,8 +115,13 @@ class _DashboardState extends State<Dashboard> {
                 if (values == null) {
                   return Text('Loading...');
                 } else {
-                  var x = values[index];
-                  print(x);
+                  switch(index){
+                    case 0: values[index].actual = '3'; break;
+                    case 1: values[index].actual = '1'; break;
+                    case 2: values[index].actual = '6.1'; break;
+                    case 3: values[index].actual = '2';  break;
+                  }
+                  // print(values[index].stageData.actual = '1');
                   return StageWidget(values[index]);
                 }
               },

@@ -39,19 +39,19 @@ class SiteDataWidget extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 8.0, 0),
                 child: Text(
-                  this.siteName,
+                  "Honeywell GRE",
                   style: siteNameStyle,
                 ),
               ),
               Container(
                 padding: const EdgeInsets.fromLTRB(20.0, 2.0, 20.0, 2.0),
                 decoration: myBoxDecoration(),
-                child: Text(this.systemtype, style: systemTypeStyle),
+                child: Text("EBI", style: systemTypeStyle),
               ),
             ],
           ),
           Text(
-            this.siteId,
+            "HON00299683",
             style: siteIdStyle,
           ),
         ],
