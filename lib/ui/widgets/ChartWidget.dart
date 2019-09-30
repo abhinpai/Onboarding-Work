@@ -34,7 +34,7 @@ class _ChartWidgetState extends State<ChartWidget> {
     _seriesLineData.add(
       charts.Series(
         colorFn: (__, _) => charts.ColorUtil.fromDartColor(Color(0xffff0033)),
-        id: 'Onboarding Workflow',
+        id: 'Onboarding Workflow Predicted',
         data: predictedData,
         domainFn: (OnboardTrack track, _) => track.stageVal,
         measureFn: (OnboardTrack track, _) => track.timeVal,
@@ -44,7 +44,7 @@ class _ChartWidgetState extends State<ChartWidget> {
     _seriesLineData.add(
       charts.Series(
         colorFn: (__, _) => charts.ColorUtil.fromDartColor(Color(0xff109618)),
-        id: 'Onboarding Workflow',
+        id: 'Onboarding Workflow Actual',
         data: actualData,
         domainFn: (OnboardTrack track, _) => track.stageVal,
         measureFn: (OnboardTrack track, _) => track.timeVal,
@@ -75,6 +75,18 @@ class _ChartWidgetState extends State<ChartWidget> {
               defaultRenderer: new charts.LineRendererConfig(),
               animate: true,
               animationDuration: Duration(seconds: 2),
+              behaviors: [
+                // new charts.ChartTitle('Stages',
+                    // titleStyleSpec: charts.TextStyleSpec(fontSize: 12),
+                    // behaviorPosition: charts.BehaviorPosition.bottom,
+                    // titleOutsideJustification:
+                    //     charts.OutsideJustification.middleDrawArea),
+                // new charts.ChartTitle('Time (Hr)',
+                //     titleStyleSpec: charts.TextStyleSpec(fontSize: 12),
+                //     behaviorPosition: charts.BehaviorPosition.start,
+                //     titleOutsideJustification:
+                //         charts.OutsideJustification.middleDrawArea),
+              ],
             ),
           ),
           SizedBox(
