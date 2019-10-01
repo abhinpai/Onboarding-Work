@@ -18,16 +18,16 @@ class _ChartWidgetState extends State<ChartWidget> {
   _generateData() {
     var predictedData = [
       new OnboardTrack(0, 1),
-      new OnboardTrack(1, 10),
-      new OnboardTrack(2, 58),
-      new OnboardTrack(3, 67),
-      new OnboardTrack(4, 68),
+      new OnboardTrack(1, 26),
+      new OnboardTrack(2, 154),
+      new OnboardTrack(3, 179),
+      new OnboardTrack(4, 180),
     ];
     var actualData = [
       new OnboardTrack(0, 3),
-      new OnboardTrack(1, 11),
-      new OnboardTrack(2, 60),
-      new OnboardTrack(3, 76),
+      new OnboardTrack(1, 27),
+      new OnboardTrack(2, 172),
+      new OnboardTrack(3, 220),
     ];
 
     _seriesLineData.add(

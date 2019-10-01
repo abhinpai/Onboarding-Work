@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class StageWidget extends StatelessWidget {
-
   TextStyle stageStyle = TextStyle(
-      fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.black45, );
+    fontWeight: FontWeight.bold,
+    fontSize: 18.0,
+    color: Colors.black45,
+  );
   TextStyle ownerStyle = TextStyle(
       fontWeight: FontWeight.bold, fontSize: 14.0, color: Colors.black45);
   final Color predictedColor = Colors.red;
@@ -22,13 +24,16 @@ class StageWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              SizedBox(width: 230, child: Text(
-                this.stageData.name,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                softWrap: false,
-                style: stageStyle,
-              ),),
+              SizedBox(
+                width: 230,
+                child: Text(
+                  this.stageData.name,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  softWrap: false,
+                  style: stageStyle,
+                ),
+              ),
               Text(this.stageData.predicted + " " + this.stageData.timeType,
                   style: stageStyle.copyWith(
                       fontSize: 16.0, color: predictedColor))
@@ -44,8 +49,10 @@ class StageWidget extends StatelessWidget {
                 'Customer Success Manager',
                 style: ownerStyle,
               ),
-              
-              Text(this.stageData.actual != null ? this.stageData.actual + " " + this.stageData.timeType : 'NA',
+              Text(
+                  this.stageData.actual != null
+                      ? this.stageData.actual + " " + this.stageData.timeType
+                      : 'NA',
                   style:
                       stageStyle.copyWith(fontSize: 16.0, color: actualColor))
             ],
