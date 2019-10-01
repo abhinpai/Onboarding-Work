@@ -22,7 +22,6 @@ class _ChartWidgetState extends State<ChartWidget> {
       new OnboardTrack(2, 58),
       new OnboardTrack(3, 67),
       new OnboardTrack(4, 68),
-      // new OnboardTrack(5, 70),
     ];
     var actualData = [
       new OnboardTrack(0, 3),
@@ -76,16 +75,16 @@ class _ChartWidgetState extends State<ChartWidget> {
               animate: true,
               animationDuration: Duration(seconds: 2),
               behaviors: [
-                // new charts.ChartTitle('Stages',
-                    // titleStyleSpec: charts.TextStyleSpec(fontSize: 12),
-                    // behaviorPosition: charts.BehaviorPosition.bottom,
-                    // titleOutsideJustification:
-                    //     charts.OutsideJustification.middleDrawArea),
-                // new charts.ChartTitle('Time (Hr)',
-                //     titleStyleSpec: charts.TextStyleSpec(fontSize: 12),
-                //     behaviorPosition: charts.BehaviorPosition.start,
-                //     titleOutsideJustification:
-                //         charts.OutsideJustification.middleDrawArea),
+                new charts.ChartTitle('Onboarding Stages',
+                    titleStyleSpec: charts.TextStyleSpec(fontSize: 12),
+                    behaviorPosition: charts.BehaviorPosition.bottom,
+                    titleOutsideJustification:
+                        charts.OutsideJustification.middleDrawArea),
+                new charts.ChartTitle('Time (Hr)',
+                    titleStyleSpec: charts.TextStyleSpec(fontSize: 12),
+                    behaviorPosition: charts.BehaviorPosition.start,
+                    titleOutsideJustification:
+                        charts.OutsideJustification.middleDrawArea),
               ],
             ),
           ),
